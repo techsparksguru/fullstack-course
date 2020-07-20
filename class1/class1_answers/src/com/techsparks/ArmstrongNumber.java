@@ -6,14 +6,14 @@ import java.util.Arrays;
 For example, 153 is an Armstrong number because of 153= 1+ 125+27, which is equal to 1^3+5^3+3^3
 Write 2 methods:
 1. Find if given number is Armstrong number
-    - Hint : method - Boolean isArmstrongNumber(Integer number)
+    - Hint : method - Boolean isArmstrongNumber(int number)
 2. Find all Armstrong number within given
-    - Hint : method - List armstrongNumberInRange(Integer fromNumber, Integer toNumber)
+    - Hint : method - int[] armstrongNumberInRange(int fromNumber, int toNumber)
  */
 public class ArmstrongNumber {
     public static void main(String[] args) {
-        System.out.println("Is number :"+isArmstrongNumber(154));
-        System.out.println(Arrays.toString(armstrongNumberInRange(0, 1000)));
+        System.out.println("Is number :"+isArmstrongNumber(153));
+        System.out.println("\n"+Arrays.toString(armstrongNumberInRange(0, 1000)));
     }
 
     public static boolean isArmstrongNumber(int number) {
@@ -55,11 +55,12 @@ public class ArmstrongNumber {
                 System.out.print(i + "  ");
                 counter++;
                 list = Arrays.copyOf(list, counter);
+                list[counter-1] = i;
             }
         }
         // if no Armstrong number is found
         if (counter == 0) {
-            System.out.print("There is no Armstrong number Between " + start + " and " + end);
+            System.out.println("There is no Armstrong number Between " + start + " and " + end);
         }
     return list;
     }
